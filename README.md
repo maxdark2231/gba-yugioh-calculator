@@ -29,66 +29,119 @@ This project is a life point calculator for Yu-Gi-Oh! developed for the Game Boy
 
 ---
 
-## Cómo Funciona / How It Works
+## Tutorial (Español) / Tutorial (English)
 
-El programa usa la librería de GBA para generar un modo de texto simple en la pantalla. A través de las funciones del sistema, puedes interactuar con los puntos de vida de dos jugadores, lanzar un dado o una moneda, y reiniciar el juego cuando sea necesario.
+### Español
 
-The program uses the GBA library to generate a simple text mode on the screen. Through the system functions, you can interact with the life points of two players, roll a die or flip a coin, and reset the game when needed.
+1. **Abrir la Calculadora**:
+   - Cuando inicies la calculadora en tu emulador o GBA, verás el título "Yu-Gi-Oh! Calculator" y las instrucciones de uso en la pantalla.
+   - Los puntos de vida de los jugadores están configurados a 8000 por defecto.
 
-### Descripción de las funciones principales del código / Description of the Main Functions
+2. **Seleccionar Puntos para Modificar**:
+   - Usa los botones **Izquierda** y **Derecha** en el D-Pad para navegar entre las opciones de puntos disponibles: 50, 100, 1000 y 2000. El valor seleccionado aparecerá resaltado.
+   
+3. **Seleccionar Jugador**:
+   - Usa los botones **Arriba** y **Abajo** para seleccionar entre el Jugador 1 y el Jugador 2.
 
-1. **`initTextMode()`**: Inicializa el modo de texto en la consola GBA. / Initializes text mode on the GBA console.
-2. **`printStaticScreen()`**: Muestra el título y las instrucciones en la pantalla al iniciar. / Displays the title and instructions on the screen at the start.
-3. **`updateLifePoints()`**: Muestra los puntos de vida actuales de los jugadores en la pantalla. / Displays the current life points of the players on the screen.
-4. **`showPoints()`**: Muestra las opciones de puntos de vida disponibles (50, 100, 1000, 2000) y resalta la opción seleccionada. / Displays the available life point options (50, 100, 1000, 2000) and highlights the selected option.
-5. **`modifyLifePoints(int add)`**: Modifica los puntos de vida del jugador seleccionado, ya sea sumando o restando puntos, según el botón presionado (A o B). / Modifies the selected player's life points, either adding or subtracting points based on the button pressed (A or B).
-6. **`rollDice()`**: Simula el lanzamiento de un dado y muestra el resultado en la pantalla (1-6). / Simulates rolling a die and displays the result on the screen (1-6).
-7. **`flipCoin()`**: Simula el lanzamiento de una moneda y muestra el resultado en la pantalla (Heads o Tails). / Simulates flipping a coin and displays the result on the screen (Heads or Tails).
-8. **`resetAll()`**: Reinicia los puntos de vida, limpia los resultados del dado y la moneda, y restablece la selección de puntos a la opción por defecto. / Resets the life points, clears the die and coin results, and resets the point selection to the default.
+4. **Sumar o Restar Puntos de Vida**:
+   - Una vez que hayas seleccionado un jugador y los puntos que deseas modificar, presiona **A** para sumar los puntos al jugador seleccionado o **B** para restarlos.
+
+5. **Lanzar un Dado**:
+   - Presiona **L** para lanzar un dado. El número del dado (1 a 6) aparecerá en la pantalla.
+
+6. **Lanzar una Moneda**:
+   - Presiona **R** para lanzar una moneda. Los resultados "Heads" (cara) o "Tails" (cruz) aparecerán en la pantalla.
+
+7. **Reiniciar los Puntos de Vida**:
+   - Si deseas reiniciar solo los puntos de vida a 8000, presiona **Start**.
+
+8. **Reiniciar Todo**:
+   - Si deseas reiniciar todo (puntos de vida, dado, moneda), presiona **Select**.
 
 ---
 
-## Cómo Editar el Código / How to Edit the Code
+### English
 
-El código es fácil de editar y modificar según tus necesidades. Aquí algunos puntos clave que puedes personalizar:  
-The code is easy to edit and modify to suit your needs. Here are a few key areas you can customize:
+1. **Open the Calculator**:
+   - When you start the calculator on your emulator or GBA, you'll see the title "Yu-Gi-Oh! Calculator" and the usage instructions on the screen.
+   - The players' life points are set to 8000 by default.
 
-1. **Modificar los puntos de vida iniciales / Modify the Initial Life Points**:
-   - Los puntos de vida de ambos jugadores están inicializados en `8000`. Si deseas cambiar este valor por defecto, puedes editar las variables `player1LP` y `player2LP` en la función `resetAll()`. / The life points of both players are initialized to `8000`. If you want to change this default value, you can edit the variables `player1LP` and `player2LP` in the `resetAll()` function.
-  
+2. **Select Points to Modify**:
+   - Use the **Left** and **Right** buttons on the D-Pad to navigate between the available point options: 50, 100, 1000, and 2000. The selected value will be highlighted.
+   
+3. **Select a Player**:
+   - Use the **Up** and **Down** buttons to select between Player 1 and Player 2.
 
-Modificar los valores de puntos disponibles / Modify the Available Point Values:
+4. **Add or Subtract Life Points**:
+   - Once you've selected a player and the points you want to modify, press **A** to add the points to the selected player or **B** to subtract them.
 
-Puedes cambiar las opciones de puntos de vida (50, 100, 1000, 2000) editando la siguiente línea al comienzo del código. / You can change the life point options (50, 100, 1000, 2000) by editing the following line at the beginning of the code:
-c
-Copy code
-int points[] = {50, 100, 1000, 2000};  // Cambia estos valores por otros / Change these values to others
-Agregar más opciones de puntos de vida / Add More Life Point Options:
+5. **Roll a Die**:
+   - Press **L** to roll a die. The die number (1 to 6) will appear on the screen.
 
-Si deseas agregar más opciones para los puntos de vida, puedes añadir más valores a la matriz points[] y modificar el código en la función showPoints() para mostrar esas nuevas opciones. / If you want to add more options for life points, you can add more values to the points[] array and modify the code in the showPoints() function to display these new options.
-Modificar el comportamiento del dado o la moneda / Modify the Die or Coin Behavior:
+6. **Flip a Coin**:
+   - Press **R** to flip a coin. The results "Heads" or "Tails" will appear on the screen.
 
-El dado actualmente genera un número entre 1 y 6. Puedes ajustar el rango en la función rollDice() si quieres un dado diferente. / The die currently generates a number between 1 and 6. You can adjust the range in the rollDice() function if you want a different die.
-La moneda tiene dos resultados ("Heads" y "Tails"). Si quieres modificar los resultados de la moneda, edita la función flipCoin(). / The coin has two results ("Heads" and "Tails"). If you want to modify the coin results, edit the flipCoin() function.
-Cambiar la disposición en la pantalla / Change Screen Layout:
+7. **Reset Life Points**:
+   - If you want to reset just the life points to 8000, press **Start**.
 
-Las funciones centerText() y printLeftText() controlan la disposición de los textos en la pantalla. Puedes ajustar las posiciones para que el texto se muestre donde prefieras. / The functions centerText() and printLeftText() control the text layout on the screen. You can adjust the positions to display the text where you prefer.
-Requisitos para Compilar / Requirements to Compile
-Tener instalado devkitPro con el compilador de GBA. / Have devkitPro installed with the GBA compiler.
-Ejecutar el comando make en el terminal para compilar el proyecto. / Run the make command in the terminal to compile the project.
-Compilación / Compilation
-Para compilar el proyecto, sigue estos pasos:
+8. **Reset Everything**:
+   - If you want to reset everything (life points, die, coin), press **Select**.
+
+---
+
+## Detalles del Código / Code Details
+
+### Estructura del Código / Code Structure
+
+El programa está estructurado en varias funciones clave, cada una encargada de una parte específica de la funcionalidad de la calculadora.
+
+The program is structured into several key functions, each responsible for a specific part of the calculator's functionality.
+
+1. **`initTextMode()`**:
+   - Inicializa el modo de texto en la pantalla de la GBA. / Initializes the text mode on the GBA screen.
+
+2. **`printStaticScreen()`**:
+   - Muestra el título y las instrucciones en la pantalla de inicio. / Displays the title and instructions on the start screen.
+
+3. **`updateLifePoints()`**:
+   - Muestra y actualiza los puntos de vida actuales de los jugadores seleccionados en la pantalla. / Displays and updates the current life points of the selected players on the screen.
+
+4. **`showPoints()`**:
+   - Muestra las opciones de puntos disponibles y resalta el valor seleccionado. / Displays the available point options and highlights the selected value.
+
+5. **`modifyLifePoints(int add)`**:
+   - Modifica los puntos de vida del jugador seleccionado, sumando o restando según el botón presionado (A para sumar, B para restar). / Modifies the selected player's life points, either adding or subtracting depending on the button pressed (A to add, B to subtract).
+
+6. **`rollDice()`**:
+   - Simula el lanzamiento de un dado y muestra un número entre 1 y 6. / Simulates rolling a die and displays a number between 1 and 6.
+
+7. **`flipCoin()`**:
+   - Simula el lanzamiento de una moneda y muestra "Heads" o "Tails". / Simulates flipping a coin and displays "Heads" or "Tails".
+
+8. **`resetAll()`**:
+   - Reinicia los puntos de vida a 8000, limpia los resultados del dado y la moneda, y reinicia las selecciones de puntos. / Resets life points to 8000, clears the die and coin results, and resets the point selections.
+
+---
+
+## Cómo Modificar el Código / How to Modify the Code
+
+1. **Modificar el dado o la moneda / Modify the Die or Coin**:
+   - Ajusta la función `rollDice()` para cambiar el rango del dado. / Adjust the `rollDice()` function to change the die range.
+   - Edita `flipCoin()` para modificar los resultados de la moneda. / Edit `flipCoin()` to modify the coin results.
+
+2. **Cambiar la disposición de la pantalla / Change Screen Layout**:
+   - Usa las funciones `centerText()` y `printLeftText()` para cambiar las posiciones de texto en la pantalla. / Use the `centerText()` and `printLeftText()` functions to change text positions on the screen.
+
+---
+
+## Compilación / Compilation
+
+Para compilar el proyecto, sigue estos pasos:  
 To compile the project, follow these steps:
 
-Guarda todos los archivos del proyecto en un directorio. / Save all project files in a directory.
-Asegúrate de tener instalado devkitPro con soporte para GBA. / Ensure you have devkitPro installed with GBA support.
-Ejecuta el siguiente comando en el terminal dentro del directorio del proyecto: / Run the following command in the terminal within the project directory:
-bash
-Copy code
-make
-Esto generará un archivo .gba que puedes usar en un emulador o en hardware real de GBA.
-This will generate a .gba file that you can use in an emulator or on real GBA hardware.
+1. Guarda todos los archivos del proyecto en un directorio. / Save all project files in a directory.
+2. Asegúrate de tener instalado `devkitPro` con soporte para GBA. / Ensure you have `devkitPro` installed with GBA support.
+3. Ejecuta el siguiente comando en el terminal dentro del directorio del proyecto: / Run the following command in the terminal within the project directory:
 
-   ```c
-   player1LP = 8000;  // Cambia este valor por otro si quieres un inicio diferente / Change this value to another if you want a different starting amount
-   player2LP = 8000;
+```bash
+make
