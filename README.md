@@ -55,6 +55,39 @@ The code is easy to edit and modify to suit your needs. Here are a few key areas
 
 1. **Modificar los puntos de vida iniciales / Modify the Initial Life Points**:
    - Los puntos de vida de ambos jugadores están inicializados en `8000`. Si deseas cambiar este valor por defecto, puedes editar las variables `player1LP` y `player2LP` en la función `resetAll()`. / The life points of both players are initialized to `8000`. If you want to change this default value, you can edit the variables `player1LP` and `player2LP` in the `resetAll()` function.
+  
+
+Modificar los valores de puntos disponibles / Modify the Available Point Values:
+
+Puedes cambiar las opciones de puntos de vida (50, 100, 1000, 2000) editando la siguiente línea al comienzo del código. / You can change the life point options (50, 100, 1000, 2000) by editing the following line at the beginning of the code:
+c
+Copy code
+int points[] = {50, 100, 1000, 2000};  // Cambia estos valores por otros / Change these values to others
+Agregar más opciones de puntos de vida / Add More Life Point Options:
+
+Si deseas agregar más opciones para los puntos de vida, puedes añadir más valores a la matriz points[] y modificar el código en la función showPoints() para mostrar esas nuevas opciones. / If you want to add more options for life points, you can add more values to the points[] array and modify the code in the showPoints() function to display these new options.
+Modificar el comportamiento del dado o la moneda / Modify the Die or Coin Behavior:
+
+El dado actualmente genera un número entre 1 y 6. Puedes ajustar el rango en la función rollDice() si quieres un dado diferente. / The die currently generates a number between 1 and 6. You can adjust the range in the rollDice() function if you want a different die.
+La moneda tiene dos resultados ("Heads" y "Tails"). Si quieres modificar los resultados de la moneda, edita la función flipCoin(). / The coin has two results ("Heads" and "Tails"). If you want to modify the coin results, edit the flipCoin() function.
+Cambiar la disposición en la pantalla / Change Screen Layout:
+
+Las funciones centerText() y printLeftText() controlan la disposición de los textos en la pantalla. Puedes ajustar las posiciones para que el texto se muestre donde prefieras. / The functions centerText() and printLeftText() control the text layout on the screen. You can adjust the positions to display the text where you prefer.
+Requisitos para Compilar / Requirements to Compile
+Tener instalado devkitPro con el compilador de GBA. / Have devkitPro installed with the GBA compiler.
+Ejecutar el comando make en el terminal para compilar el proyecto. / Run the make command in the terminal to compile the project.
+Compilación / Compilation
+Para compilar el proyecto, sigue estos pasos:
+To compile the project, follow these steps:
+
+Guarda todos los archivos del proyecto en un directorio. / Save all project files in a directory.
+Asegúrate de tener instalado devkitPro con soporte para GBA. / Ensure you have devkitPro installed with GBA support.
+Ejecuta el siguiente comando en el terminal dentro del directorio del proyecto: / Run the following command in the terminal within the project directory:
+bash
+Copy code
+make
+Esto generará un archivo .gba que puedes usar en un emulador o en hardware real de GBA.
+This will generate a .gba file that you can use in an emulator or on real GBA hardware.
 
    ```c
    player1LP = 8000;  // Cambia este valor por otro si quieres un inicio diferente / Change this value to another if you want a different starting amount
