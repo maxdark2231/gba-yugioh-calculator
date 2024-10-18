@@ -296,4 +296,13 @@ make
 Esto generará un archivo .gba que puedes usar en un emulador o en hardware real de GBA.
 This will generate a .gba file that you can use in an emulator or on real GBA hardware.
 
+## Invítame a un café / Buy Me a Coffee
+
+Si te gusta este proyecto y quieres invitarme a un café, considera hacer una donación de $1:
+
+[Donar $1 a través de PayPal](https://www.paypal.com/donate?business=richierosario56@gmail.com&amount=1)
+
+If you like this project and want to buy me a coffee, consider donating $1:
+
+[Donate $1 via PayPal](https://www.paypal.com/donate?business=richierosario56@gmail.com&amount=1)
 
