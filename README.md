@@ -147,7 +147,7 @@ To compile the project, follow these steps:
 make
 Esto generará un archivo .gba que puedes usar en un emulador o en hardware real de GBA.
 This will generate a .gba file that you can use in an emulator or on real GBA hardware.
-
+----------------------------------------
 Invítame a un café / Buy Me a Coffee
 Si te gusta este proyecto y quieres invitarme a un café, considera hacer una donación de $1:
 
